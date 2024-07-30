@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;com.practise.expenseservice.ApiGatewayApplication&apos; to &apos;DemoApp&apos;&#x0D;&#x0A;- Original project: &apos;demo-jpa&apos;&#x0D;&#x0A;- Original element: &apos;com.practise.expenseservice.ApiGatewayApplication&apos;&#x0D;&#x0A;- Renamed element: &apos;com.practise.expenseservice.DemoApp&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;ApiGatewayApplication&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.practise.expenseservice{ApiGatewayApplication.java[ApiGatewayApplication" matchStrategy="1" name="DemoApp" qualified="false" references="true" similarDeclarations="false" stamp="1704728899124" textual="false" version="1.0"/>
+</session>

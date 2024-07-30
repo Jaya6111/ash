@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Extract constant &apos;BOOK_TOPIC&apos; from expression &apos;&quot;book-topic&quot;&apos;&#x0D;&#x0A;- Original project: &apos;app-book&apos;&#x0D;&#x0A;- Constant name: &apos;BOOK_TOPIC&apos;&#x0D;&#x0A;- Constant expression: &apos;&quot;book-topic&quot;&apos;&#x0D;&#x0A;- Declared visibility: &apos;public&apos;&#x0D;&#x0A;- Replace occurrences of expression with constant" description="Extract constant &apos;BOOK_TOPIC&apos;" flags="786434" id="org.eclipse.jdt.ui.extract.constant" input="/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.rs.app.kafka{KafkaConfig.java" name="BOOK_TOPIC" qualify="false" replace="true" selection="303 12" stamp="1721293272812" version="1.0" visibility="1"/>
+</session>

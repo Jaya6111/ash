@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;ThymeleafConfig.java&apos; to &apos;spring_security/src/main/java/com.as.spring.config&apos;&#x0D;&#x0A;- Original project: &apos;email-service&apos;&#x0D;&#x0A;- Destination element: &apos;spring_security/src/main/java/com.as.spring.config&apos;&#x0D;&#x0A;- Original element: &apos;com.as.email.config.ThymeleafConfig.java&apos;" description="Copy compilation unit" destination="=spring_security/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.as.spring.config" element1="/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.as.email.config{ThymeleafConfig.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1719577623865" units="1" version="1.0"/>
+</session>

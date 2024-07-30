@@ -1,0 +1,17 @@
+package jcs.practice.repository;
+
+import java.util.List;
+
+import org.hibernate.query.spi.Limit;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+import jcs.practice.entity.User;
+
+@Repository
+public interface UserRepository extends JpaRepository<User, Integer> {
+
+	 List<User> findByPlace(String place, Limit limit);
+
+	List<User> findByPlace(String place, Object setMaxRows);
+}

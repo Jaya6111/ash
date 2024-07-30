@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+</head>
+<body>
+<h2 align="center">Registration Form</h2>
+<form th:action="@{/save}" method="post" th:object="${user}">
+    <!-- <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" /> -->
+    <table align="center" border="2">
+        <tr>
+            <td><label for="name">Name:</label></td>
+            <td><input type="text" id="name" th:field="*{name}" required></td>
+        </tr>
+        <tr>
+            <td><label for="city">City:</label></td>
+            <td><input type="text" id="city" th:field="*{city}" required></td>
+        </tr>
+        <tr>
+            <td><label for="country">Country:</label></td>
+            <td><input type="text" id="country" th:field="*{country}" required></td>
+        </tr>
+        <tr>
+            <td><label for="email">Email:</label></td>
+            <td><input type="email" id="email" th:field="*{email}" required></td>
+        </tr>
+        <tr>
+            <td><label for="username">Username:</label></td>
+            <td><input type="text" id="username" th:field="*{username}" required></td>
+        </tr>
+        <tr>
+            <td><label for="password">Password:</label></td>
+            <td><input type="password" id="password" th:field="*{password}" required></td>
+        </tr>
+        <tr>
+            <td align="center" colspan="2"><input type="submit" value="Register"></td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>

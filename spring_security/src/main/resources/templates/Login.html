@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login</title>
+</head>
+<body>
+	<!-- <div th:if="${param.error}">
+		<p style="color: red" align="center">Invalid username or password.</p>
+	</div>
+	<div th:if="${param.logout}">
+		<p style="color: green" align="center">You have been logged out
+			successfully.</p>
+	</div> -->
+
+	<form th:action="@{/perform_login}" method="post">
+		<!-- <input type="hidden" th:name="${_csrf.parameterName}"
+			th:value="${_csrf.token}" /> -->
+		<table align="center" border="2">
+			<tr>
+				<th align="center" colspan="2">Login</th>
+			</tr>
+			<tr>
+				<td align="center"><label for="username">Username:</label></td>
+				<td align="center"><input type="text" id="username"
+					name="username" title="Enter your username" placeholder="Username"
+					required></td>
+			</tr>
+			<tr>
+				<td align="center"><label for="password">Password:</label></td>
+				<td align="center"><input type="password" id="password"
+					name="password" title="Enter your password" placeholder="Password"
+					required></td>
+			</tr>
+			<tr>
+				<td align="center"><a href="/register">Register</a></td>
+				<td align="center"><input type="submit"
+					value="Login"></td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>

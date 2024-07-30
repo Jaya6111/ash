@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Move element &apos;Strings2.java&apos; to &apos;java_1.8_features/src/com.p.strings&apos;&#x0D;&#x0A;- Original project: &apos;java_1.8_features&apos;&#x0D;&#x0A;- Destination element: &apos;java_1.8_features/src/com.p.strings&apos;&#x0D;&#x0A;- Original element: &apos;com.iv.infosys1.Strings2.java&apos;&#x0D;&#x0A;- Update references to refactored element" description="Move compilation unit" destination="/src&lt;com.p.strings" element1="/src&lt;com.iv.infosys1{Strings2.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.move" patterns="*" policy="org.eclipse.jdt.ui.moveResources" qualified="false" references="true" stamp="1704082184451" units="1" version="1.0"/>
+</session>

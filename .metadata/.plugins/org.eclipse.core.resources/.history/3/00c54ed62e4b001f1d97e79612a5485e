@@ -1,0 +1,39 @@
+package com.as.email.entity;
+
+import java.util.List;
+import java.util.Set;
+
+import org.springframework.data.mongodb.core.mapping.DBRef;
+
+
+
+public class User {
+	
+	private String id;
+
+	private String firstName;
+	private String middleName;
+	private String lastName;
+	
+	private String username;
+	private String password;
+
+	private String email;
+	private String mobile;
+
+	private String createdDate;
+	private String emailVerified;
+
+	
+	private String userType;
+
+	@DBRef
+	private List<Product> products;
+
+	@DBRef
+	private Set<String> pIds;
+
+	public User() {
+	}
+
+}

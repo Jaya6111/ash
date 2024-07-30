@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;ConnectUser.java&apos; to &apos;app-user/src/main/java/com.rs.app.feign&apos;&#x0D;&#x0A;- Original project: &apos;expense-service&apos;&#x0D;&#x0A;- Destination element: &apos;app-user/src/main/java/com.rs.app.feign&apos;&#x0D;&#x0A;- Original element: &apos;com.practise.expenseservice.feign.ConnectUser.java&apos;" description="Copy compilation unit" destination="=app-user/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.rs.app.feign" element1="/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.practise.expenseservice.feign{ConnectUser.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1701949041835" units="1" version="1.0"/>
+</session>
