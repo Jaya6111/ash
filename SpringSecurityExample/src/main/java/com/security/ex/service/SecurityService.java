@@ -7,6 +7,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -15,14 +16,14 @@ public class SecurityService {
     @Autowired
     private SecurityRepository repository;
 
-    private BCryptPasswordEncoder passwordEncoder;
+    @Autowired
+    private PasswordEncoder passwordEncoder;
 
     public User saveUser(User user) {
         String encodedPassword = passwordEncoder.encode(user.getPassword());
         user.setPassword(encodedPassword);
         user.setRole(user.getRole().toUpperCase());
-        User u = repository.save(user);
-        return u;
+        return repository.save(user);
     }
     public Optional<User> getUser(int id) {
         return repository.findById(id);
@@ -39,4 +40,7 @@ public class SecurityService {
        }
     }
 
+    public List<User> getAllUsers() {
+        return repository.findAll();
+    }
 }

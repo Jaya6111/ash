@@ -11,16 +11,22 @@ import com.as.spring.constants.AppConstant;
 public class KafkaConfig {
 	@Bean
 	public NewTopic allUserTopic() {
-		return TopicBuilder.name(AppConstant.ALL_USERS).build();
+		return TopicBuilder
+				.name(AppConstant.ALL_USERS)
+				.build();
 	}
 
 	@Bean
 	public NewTopic singleUserTopic() {
-		return TopicBuilder.name(AppConstant.SINGLE_USER).build();
+		return TopicBuilder
+				.name(AppConstant.SINGLE_USER)
+				.build();
 	}
 
 	@Bean
 	public NewTopic deleteUserTopic() {
-		return TopicBuilder.name(AppConstant.DELETE_USER).build();
+		return TopicBuilder
+				.name(AppConstant.DELETE_USER)
+				.build();
 	}
 }

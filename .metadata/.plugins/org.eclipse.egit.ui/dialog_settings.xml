@@ -50,4 +50,25 @@
 		<item key="DIALOG_HEIGHT" value="873"/>
 		<item key="DIALOG_FONT_NAME" value="1|Segoe UI|9.0|0|WINDOWS|1|-18|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI"/>
 	</section>
+	<section name="GitCommitSearchPage">
+		<item key="HISTORY_SIZE" value="1"/>
+		<section name="HISTORY0">
+			<section name="searchSection">
+				<item key="ignoreCase" value="true"/>
+				<item key="regexSearch" value="false"/>
+				<item key="textPattern" value="main"/>
+				<item key="matchAuthor" value="true"/>
+				<item key="matchCommit" value="true"/>
+				<item key="matchCommitter" value="true"/>
+				<item key="matchMessage" value="true"/>
+				<item key="matchParents" value="true"/>
+				<item key="matchTree" value="true"/>
+				<item key="allBranches" value="false"/>
+				<item key="repository0" value="C:\Users\Surya\git\Booksapp\.git"/>
+				<item key="repository1" value="C:\Users\Surya\git\.git"/>
+				<item key="repository2" value="D:\Workspace2\.git"/>
+				<item key="repositoryCount" value="3"/>
+			</section>
+		</section>
+	</section>
 </section>

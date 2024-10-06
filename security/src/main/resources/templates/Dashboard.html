@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Dashboard</title>
+<!-- <link rel="stylesheet" th:href="@{/css/styles.css}">
+    <script th:src="@{/js/scripts.js}"></script> -->
+</head>
+<body>
+	<div class="container">
+		<h1>Welcome to the Dashboard</h1>
+		<nav>
+			<ul>
+
+				<li><input type="text" id="userIdInput"
+					placeholder="Enter User ID">
+					<button onclick="getPracticeUser()">Get Practice User</button></li>
+				<li><a th:href="@{/getAll}">Get All Users</a></li>
+				<li><input type="text" id="deleteIdInput"
+					placeholder="Enter User ID">
+					<button onclick="deletePracticeUser()">Delete Practice
+						User</button></li>
+				<li><a th:href="@{/logout}">Logout</a></li>
+			</ul>
+		</nav>
+		<div id="userDetails" th:if="${user}">
+			<h2>User Details</h2>
+			<p>
+				Username: <span th:text="${user.username}"></span>
+			</p>
+			<p>
+				Email: <span th:text="${user.email}"></span>
+			</p>
+		</div>
+	</div>
+	<script>
+		function getPracticeUser() {
+			const userId = document.getElementById('userIdInput').value;
+			if (userId) {
+				window.location.href = `/getPracticeUser/${userId}`;
+			} else {
+				alert('Please enter a user ID');
+			}
+		}
+		 function deletePracticeUser() {
+	            const userId = document.getElementById('deleteIdInput').value;
+	            if (userId) {
+	                fetch(`/deletePracticeUser/${userId}`, {
+	                    method: 'DELETE'
+	                })
+	                .then(response => {
+	                    if (!response.ok) {
+	                        throw new Error('Network response was not ok');
+	                    }
+	                    return response.text();
+	                })
+	                .then(data => {
+	                    document.getElementById('message').innerText = data;
+	                })
+	                .catch(error => {
+	                    console.error('Error:', error);
+	                    document.getElementById('message').innerText = 'Error deleting user';
+	                });
+	            } else {
+	                alert('Please enter a user ID');
+	            }
+	        }
+	</script>
+</body>
+</html>

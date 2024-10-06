@@ -1,5 +1,6 @@
 package com.rs.core.examples;
 
+import java.util.Arrays;
 import java.util.HashMap;
 
 import java.util.LinkedHashSet;
@@ -13,9 +14,12 @@ public class DuplicateWords {
 
 		Set<String> unique = new LinkedHashSet<String>();
 
-		for (String word : words) {
-			unique.add(word);
-		}
+		/*
+		 * for (String word : words) { unique.add(word); }
+		 */
+		
+		Arrays.asList(words).forEach(word -> unique.add(word));
+		
 		String uniqueString = String.join(" ", unique);
 		System.out.println("The string without duplicates is: \n" + uniqueString);
 
@@ -40,7 +44,6 @@ public class DuplicateWords {
 				result.append(" " + s);
 			}
 		}
-
 		return result.toString();
 	}
 

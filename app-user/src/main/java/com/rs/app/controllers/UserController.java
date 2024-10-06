@@ -23,7 +23,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.rs.app.bean.Product;
 import com.rs.app.bean.User;
-import com.rs.app.config.KafkaService;
 import com.rs.app.repositories.UserRepository;
 import com.rs.app.request.AddMyBooksRequest;
 import com.rs.app.request.GetMyBooksRequest;
@@ -48,20 +47,17 @@ public class UserController {
 	UserValidation userValidation;
 
 	@Autowired
-	private KafkaService kafkaService;
-
-	@Autowired
 	UserService userService;
 
 	@Autowired
 	private UserRepository userRepository;
 
-	Logger logger = LoggerUtil.getLogger();
+	private static final Logger log = LoggerUtil.getLogger();
 
 	@PostMapping("/register")
 	public ResponseEntity<String> registration(@RequestBody RegistrationRequest request) {
 
-		logger.info("Registration:: request: " + request);
+		log.info("Registration:: request: " + request);
 		// Set<String> errorMessages = userValidation.validateRegistrationRequest(request);
 		boolean isRegistered = false;
 		if (request != null) {
@@ -76,9 +72,9 @@ public class UserController {
 	@GetMapping("/login")
 	public ResponseEntity<String> login(@ModelAttribute LoginRequest request) {
 
-		// Set<String> errorMessages = userValidation.validateLoginRequest(request);
-		logger.debug("Login:: request: " + request);
-		if (request != null) {
+		Set<String> errorMessages = userValidation.validateLoginRequest(request);
+		log.debug("Login:: request: " + request);
+		if (errorMessages.isEmpty()) {
 			User user = userService.login(request);
 			return new ResponseEntity<String>(user.getId(), HttpStatus.OK);
 		}
@@ -101,10 +97,10 @@ public class UserController {
 
 	int count = 1;
 
-	@GetMapping("/getUser/{id}")
-	@ResponseStatus
 	// @CircuitBreaker(name = "myCircuitBreaker", fallbackMethod ="getUserFallBack")
 	// @Retry(name = "myCircuitBreaker", fallbackMethod = "getUserFallBack")
+	@GetMapping("/getUser/{id}")
+	@ResponseStatus
 	@RateLimiter(name = "myCircuitBreaker", fallbackMethod = "getUserFallBack")
 	public GetUserResponce getUser(@PathVariable String id) {
 		GetUserResponce responce = new GetUserResponce();

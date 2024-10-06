@@ -6,9 +6,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.stereotype.Service;
 
-import java.util.Optional;
+import java.util.List;
 
+@Service
 public class MyUserDetailsService implements UserDetailsService {
 
     @Autowired
@@ -17,10 +19,22 @@ public class MyUserDetailsService implements UserDetailsService {
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 
-        User user = repository.findByUsername(username);
-        if(user == null) {
+        List<User> users = repository.findByUsername(username);
+        if(!users.isEmpty()) {
+            var userObj = users.get(0);
+            return org.springframework.security.core.userdetails.User.builder()
+                    .username(userObj.getUsername())
+                    .password(userObj.getPassword())
+                    .roles(getRoles(userObj))
+                    .build();
+        }else
             throw new UsernameNotFoundException("User Not Found");
+    }
+
+    private String[] getRoles(User userObj){
+        if(userObj.getRole() == null){
+            return new String[] {"USER"};
         }
-        return new UserPrincipal(user);
+        return userObj.getRole().split(",");
     }
 }

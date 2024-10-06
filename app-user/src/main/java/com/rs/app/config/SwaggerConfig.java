@@ -1,3 +1,4 @@
+/*
 
 package com.rs.app.config;
 
@@ -20,3 +21,4 @@ public class SwaggerConfig {
 				.paths(PathSelectors.any()).build();
 	}
 }
+*/

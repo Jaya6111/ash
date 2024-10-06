@@ -2,6 +2,7 @@ package com.rs.functionalinterface;
 
 @FunctionalInterface
 public interface SAMInterface1 {
+	
 	public void brouser();
 
 	public static void socket() {

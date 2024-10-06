@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -35,13 +36,12 @@ public class DemoController {
 
 	@Autowired
 	DemoServiceImpl service;
-	
+
 	@Autowired
 	private UserRepository repo;
 
 	@GetMapping("/get/{id}")
 	public String getDemo(@PathVariable int id) {
-
 		return demoService.getString(id);
 	}
 
@@ -63,7 +63,8 @@ public class DemoController {
 	}
 
 	@PostMapping
-	public ResponseEntity<?> uploadImage(@RequestParam("image") MultipartFile file, @RequestParam String name) throws IOException {
+	public ResponseEntity<?> uploadImage(@RequestParam("image") MultipartFile file, @RequestParam String name)
+			throws IOException {
 		String uploadImage = service.uploadImage(file, name);
 		return ResponseEntity.status(HttpStatus.OK).body(uploadImage);
 	}
@@ -78,16 +79,21 @@ public class DemoController {
 			return ResponseEntity.status(HttpStatus.NOT_FOUND).body("File not found with name " + fileName);
 		}
 	}
-	
-	@RequestMapping(value = "/html", method = RequestMethod.GET, produces = MediaType.APPLICATION_XHTML_XML_VALUE)
-	public String html(){
-		return "Success";
-	} 
-	
-	 @GetMapping("/limit")
-	    public List<User> limitUsers(@RequestParam String place, @RequestParam int num) {
-	        Pageable pageable = PageRequest.of(0, num);
-	        return repo.findByPlaceWithLimit(place, pageable);
-	    }
 
+	@RequestMapping(value = "/html", method = RequestMethod.GET, produces = MediaType.APPLICATION_XHTML_XML_VALUE)
+	public String html() {
+		return "Success";
+	}
+
+	@GetMapping("/limit")
+	public ResponseEntity<?> limitUsers(@RequestParam String place, @RequestParam int num) {
+		Pageable pageable = PageRequest.of(0, num);
+		List<User> users = repo.findByPlaceWithLimit(place, pageable);
+		return new ResponseEntity<>(users, HttpStatus.OK);
+	}
+
+	@PostMapping(value = "/file", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
+	public String saveMulti(@RequestBody MultipartFile file) {
+		return "Success";
+	}
 }

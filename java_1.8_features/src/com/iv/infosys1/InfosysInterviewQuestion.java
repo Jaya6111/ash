@@ -9,6 +9,7 @@ import java.util.Set;
 public class InfosysInterviewQuestion {
 
 	public static void main(String[] args) {
+		
 		List<Integer> list = Arrays.asList(20, 30, 40, 50, 20, 10, 50);
 		
 		Collections.sort(list);

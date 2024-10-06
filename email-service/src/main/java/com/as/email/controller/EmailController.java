@@ -34,7 +34,8 @@ public class EmailController {
 		return message;
 	}
 	
-	@RequestMapping(value = "/verify", method = RequestMethod.GET, produces = MediaType.APPLICATION_XHTML_XML_VALUE)
+	//@RequestMapping(value = "/verify", method = RequestMethod.GET, produces = MediaType.APPLICATION_XHTML_XML_VALUE)
+	@GetMapping("/verify")
 	public String verificationEmail(@RequestBody @Valid VerificationRequest request) {
 		
 		String message = null;

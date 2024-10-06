@@ -154,7 +154,7 @@ public class DemoServiceImpl implements DemoService {
 		if (imageData != null) {
 			return "file uploaded successfully : " + file.getOriginalFilename();
 		}
-		return null;
+		return "failed to uploaded file";
 	}
 
 	public byte[] downloadImage(String fileName) {

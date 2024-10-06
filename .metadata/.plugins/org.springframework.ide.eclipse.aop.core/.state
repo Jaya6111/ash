@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <aop-reference-model>
-<aop-project name="bookTest"/>
-<aop-project name="practice"/>
+<aop-project name="coupons"/>
+<aop-project name="graphql_example"/>
+<aop-project name="emailDemo"/>
 <aop-project name="spring_security"/>
 </aop-reference-model>

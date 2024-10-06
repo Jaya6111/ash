@@ -70,6 +70,8 @@
 	</section>
 	<section name="MavenProjectImportWizardPage">
 		<list key="rootDirectory">
+			<item value="D:\Workspace2\graphql_example"/>
+			<item value="E:\Downloads\coupons"/>
 			<item value="D:\Workspace2\bookTest"/>
 			<item value="D:\Workspace2\practice"/>
 			<item value="D:\Workspace2\Practice_Folder"/>
@@ -83,7 +85,6 @@
 			<item value="D:\Workspace2\user-service"/>
 			<item value="D:\Booksapp\app"/>
 			<item value="D:\app\app"/>
-			<item value="C:\Users\Surya\OneDrive\Downloads\book\book"/>
 		</list>
 		<list key="projectNameTemplate">
 			<item value="[artifactId]"/>

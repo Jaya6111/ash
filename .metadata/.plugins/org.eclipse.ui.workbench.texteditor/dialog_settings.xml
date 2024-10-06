@@ -8,16 +8,25 @@
 		<item key="isRegEx" value="false"/>
 		<item key="selection" value=""/>
 		<list key="findhistory">
+			<item value="//"/>
+			<item value="*"/>
+			<item value="i++"/>
+			<item value="kafka"/>
+			<item value="recilience4j"/>
+			<item value="reci"/>
+			<item value="OpenFeign"/>
+			<item value="ConnectEmailService"/>
+			<item value="connectBookService"/>
+			<item value="resttemplate"/>
 			<item value="KafkaThread"/>
 			<item value="if(user == null)user=new User();"/>
 			<item value="@Field"/>
 			<item value="product"/>
 			<item value="productService"/>
-			<item value="&lt;dependencyManagement&gt;"/>
-			<item value="this.mobile = mobile;"/>
 		</list>
 		<list key="replacehistory">
 			<item value=""/>
+			<item value="count.get(c) + 1"/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">

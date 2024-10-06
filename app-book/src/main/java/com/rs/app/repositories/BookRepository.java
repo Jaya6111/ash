@@ -2,6 +2,7 @@ package com.rs.app.repositories;
 
 import java.util.List;
 
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
 import org.springframework.stereotype.Repository;
@@ -24,4 +25,6 @@ public interface BookRepository extends MongoRepository<Book, String> {
 
 	List<Book> findByBookTitleContainingOrAuthorContainingOrLanguageContaining(String bookTitle, String author,
 			String language);
+	@Query("select b.bookTitle, b.pdf from product b")//select s.id, s.name from School s
+	List<Object[]> getBookTitleAndPdf();
 }
